@@ -35,10 +35,6 @@ export_env_dir "$3"
 mkdir -p $CACHE_DIR
 
 cd $BUILD_DIR
-print $BUILD_DIR
-find $BUILD_DIR
-print $CACHE_DIR
-find $CACHE_DIR
 
 if [ -d "$CACHE_DIR/flutter" ]; then
   print "Restoring Flutter SDK from CACHE"
@@ -91,6 +87,7 @@ eval $FLUTTER_BUILD | indent
 
 PUB_CACHE="$HOME/.pub-cache/"
 mkdir -p $PUB_CACHE
+find $BUILD_DIR
 
 # Saving SDK in Cache and in app.
 if [ -x flutter/bin/flutter ]; then
