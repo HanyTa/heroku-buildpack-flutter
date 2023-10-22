@@ -115,8 +115,7 @@ fi
 # Activate dhttpd dart package to run the server.
 # Is taken from my Github repo because some variables need to be changed every run
 # like PORT from environment.
-find $CACHE_DIR/.pub-cache
-if [ -d "$CACHE_DIR/.pub-cache/*" ]; then
+if [ -d "$CACHE_DIR/.pub-cache/" ]; then
   print "dhttpd Found in cache. Restoring."
   cp -R $CACHE_DIR/.pub-cache/* $PUB_CACHE
 else
