@@ -87,7 +87,6 @@ eval $FLUTTER_BUILD | indent
 
 PUB_CACHE="$HOME/.pub-cache/"
 mkdir -p $PUB_CACHE
-find $BUILD_DIR
 
 # Saving SDK in Cache and in app.
 if [ -x flutter/bin/flutter ]; then
@@ -116,7 +115,8 @@ fi
 # Activate dhttpd dart package to run the server.
 # Is taken from my Github repo because some variables need to be changed every run
 # like PORT from environment.
-
+print $CACHE_DIR
+find $CACHE_DIR
 if [ -d "$CACHE_DIR/.pub-cache/" ]; then
   print "dhttpd Found in cache. Restoring."
   cp -R $CACHE_DIR/.pub-cache/* $PUB_CACHE
